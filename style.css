@@ -1,0 +1,698 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.top-bar {
+    background-color: #fff;
+    color: black;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 36px;  
+    color: black;
+    padding-left: 21%;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-right: 10%;
+}
+
+.work-time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.3;
+    
+}
+
+.reg-btn {
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+}
+
+nav{
+    background-color: #686980;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap:15px;
+}
+
+.menu a{
+    margin: 10px;
+    padding: 5px;
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+.test-drive a{
+    background-color: #a2a3c2;
+    margin-left: 300px;
+    padding: 9px 20px;
+    
+}
+
+
+
+
+.hero {
+    width: 100%;
+    position: relative;
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Картинка заполняет весь блок */
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 45%; /* Размещаем чуть ниже середины */
+    left: 10%;
+    transform: translateY(50%);
+    color: white;
+    max-width: 600px;
+}
+
+.car-model {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.hero-text {
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.line {
+    width: 150px; /* Ширина равна ширине кнопки */
+    height: 2px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.details-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+/* Блок помощи в покупке */
+.purchase-help {
+    padding: 80px;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px 60px 20px;
+    background-color: #686980;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.section-line {
+    width: 200px;
+    height: 2px;
+    background-color: #fff;
+    margin: 0 auto 20px auto;
+}
+
+.section-subtitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Контейнер для элементов помощи */
+.help-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+.help-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 40px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.help-icon {
+    margin-bottom: 20px;
+    color: #fff; /* Цвет как в меню */
+}
+
+.help-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 180px;
+    background-color: #ddd;
+    margin: 0 20px;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    .purchase-help {
+        padding: 60px 40px;
+    }
+    
+    .help-item {
+        padding: 0 30px;
+    }
+}
+
+/* Адаптивность для мобильных - вертикальное расположение */
+@media (max-width: 768px) {
+    .purchase-help {
+        padding: 40px 20px;
+    }
+    
+    .container {
+        padding: 0 15px 40px 15px; /* Уменьшил отступ снизу для мобильных */
+    }
+    
+    .section-header {
+        margin-bottom: 50px;
+    }
+    
+    .help-items {
+        flex-direction: column; /* Вертикальное расположение */
+        gap: 40px; /* Отступ между элементами */
+    }
+    
+    .vertical-line {
+        width: 80px; /* Горизонтальная линия вместо вертикальной */
+        height: 1px;
+        margin: 0 auto;
+    }
+    
+    .help-item {
+        padding: 0 20px;
+        width: 100%; /* Занимает всю ширину */
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .purchase-help {
+        padding: 30px 15px;
+    }
+    
+    .container {
+        padding: 0 10px 30px 10px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .section-subtitle {
+        font-size: 14px;
+    }
+    
+    .help-text {
+        font-size: 16px;
+    }
+    
+    .help-icon i {
+        font-size: 40px !important; /* Уменьшаем иконки на мобильных */
+    }
+}
+
+
+
+
+
+
+
+/* Секция модельного ряда */
+.model-range {
+    padding: 20px 20px; /* Добавил боковые отступы */
+    background-color: #fff;
+    text-align: center;
+}
+
+.model-range .section-header {
+    margin-bottom: 60px;
+}
+
+.model-range .section-title {
+    color: #000;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.model-range .section-line {
+    width: 100px;
+    height: 2px;
+    background-color: #000;
+    margin: 0 auto 20px auto;
+}
+
+/* Карусель */
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.3s ease;
+}
+
+.car-item {
+    background-color: #fff; /* Белый фон */
+    border: 2px solid #000; /* Черная рамка */
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 300px;
+    text-align: center;
+    color: #000; /* Черный текст */
+}
+
+.car-image {
+    margin-bottom: 20px;
+    flex-grow: 1; /* Занимает доступное пространство */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-image img {
+    width: 100%;
+    height: 250px; /* Увеличил высоту изображения */
+    object-fit: contain; /* Показывает всю фотографию без обрезки */
+    border-radius: 5px;
+}
+
+.car-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #000; /* Черный текст */
+}
+
+.details-btn-car {
+    background-color: transparent;
+    color: #000; /* Черный текст */
+    border: 2px solid #000; /* Черная рамка */
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.details-btn-car i {
+    font-size: 12px;
+    color: #000; /* Черная стрелка */
+    
+}
+
+/* Кнопки карусели */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #000; /* Черный фон кнопок */
+    color: white; /* Белые стрелки */
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: -70px;
+}
+
+.next-btn {
+    right: -70px;
+}
+
+.carousel-btn:hover {
+    background-color: #333;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .model-range {
+        padding: 60px 15px;
+    }
+    
+    .car-item {
+        min-width: 280px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .prev-btn {
+        left: -10px;
+    }
+    
+    .next-btn {
+        right: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .model-range {
+        padding: 40px 10px;
+    }
+    
+    .car-item {
+        min-width: 260px;
+        padding: 15px;
+    }
+    
+    .car-name {
+        font-size: 18px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .prev-btn {
+        left: -5px;
+    }
+    
+    .next-btn {
+        right: -5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Подвал сайта */
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 60px 0 30px 0;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-block {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Первый блок */
+.footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer-info-line {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.footer-phone {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Общие стили для заголовков и линий */
+.footer-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.footer-line {
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Второй блок - Адрес */
+.footer-address p {
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+.footer-address p strong {
+    color: #fff;
+}
+
+/* Третий блок - Контакты */
+.footer-contacts {
+    font-size: 14px;
+}
+
+.contact-department {
+    margin-bottom: 20px;
+}
+
+.contact-department p {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.contact-department p strong {
+    color: #fff;
+}
+
+/* Четвертый блок - Тест-драйв */
+
+.test-drive-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.test-drive-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.test-drive-text p {
+    margin-bottom: 5px;
+}
+
+.test-drive-btn {
+    background-color: #a2a3c2;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 200px;
+}
+
+.test-drive-btn:hover {
+    background-color: #8a8bb0;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .footer-container {
+        gap: 30px;
+    }
+    
+    .footer-block {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 20px 0;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .footer-block {
+        min-width: 100%;
+    }
+    
+    .footer-test-drive {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 0 15px 0;
+    }
+    
+    .footer-container {
+        padding: 0 15px;
+        gap: 30px;
+    }
+    
+    .footer-logo {
+        font-size: 20px;
+    }
+    
+    .footer-phone {
+        font-size: 24px;
+    }
+    
+    .footer-title {
+        font-size: 16px;
+    }
+    
+    .test-drive-title {
+        font-size: 16px;
+    }
+    
+    .test-drive-btn {
+        padding: 12px 25px;
+        width: 180px;
+    }
+}
