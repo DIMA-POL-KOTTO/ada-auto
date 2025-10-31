@@ -27,9 +27,9 @@
     </div>
     <nav>
         <ul class="menu">
-            <li><a href="#">ГЛАВНАЯ</a></li>
+            <li><a href="index.php">ГЛАВНАЯ</a></li>
             <li><a href="#">НОВОСТИ</a></li>
-            <li><a href="#">МОДЕЛИ</a></li>
+            <li><a href="models.php">МОДЕЛИ</a></li>
             <li><a href="#">КЛИЕНТАМ</a></li>
             <li><a href="#">СЕРВИС</a></li>
             <li><a href="#">КОНТАКТЫ</a></li>
