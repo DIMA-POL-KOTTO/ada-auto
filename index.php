@@ -121,7 +121,7 @@ include "blocks/header.php";
                                             'hit' => 'Хит продаж',
                                             'award' => 'Лучший в классе',
                                             'new' => 'Новинка',
-                                            default => 'Популярно'
+                                            default => $car['badge_type']
                                         };
                                         echo htmlspecialchars($badgeText);
                                     ?>
@@ -129,7 +129,7 @@ include "blocks/header.php";
                             <?php endif; ?>
                             <div class="model-image">
                                 <?php if(!empty($car['image'])): ?>
-                                    <img src="<?=htmlspecialchars($car["image"]) ?>" alt="<?=htmlspecialchars($car['brand'].' '.$car['model']) ?>">
+                                    <img src="images/models/<?=htmlspecialchars($car["image"]) ?>" alt="<?=htmlspecialchars($car['brand'].' '.$car['model']) ?>">
                                 <?php else: ?>
                                     <div class="model-image-placeholder">
                                         <?= htmlspecialchars($car['brand']) ?> <?= htmlspecialchars($car['model']) ?>
