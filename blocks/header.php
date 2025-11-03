@@ -1,39 +1,25 @@
-<header>
-    <div class="top-bar">
-        <div class="logo">
-            ADA | Auto
-        </div>
-        <div class="header-right">
-            <div class="work-time">
-                <i class="fas fa-clock" style="font-size: 44px;"></i>
-                пн-вс<br> 08.00 - 20.00
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+                <div class="logo">
+                    <h1>ADA Auto</h1>
+                </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#" class="active">Главная</a></li>
+                    <li><a href="#">Модельный ряд</a></li>
+                    <li><a href="#">Авто в наличии</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="auth.php" class="btn-outline">Войти</a>
+                <a href="#" class="btn-primary">Записаться на тест-драйв</a>
             </div>
-            <?php
-                if(isset($_COOKIE['login']))
-                    echo '<p>Привет, ' . htmlspecialchars($_COOKIE["login"]).'</p>
-                            <a href="/lib/logout.php" class="reg-btn">Выйти</a>';
-
-                else
-                    echo '<a href="/registration.php" class="reg-btn">
-                                РЕГИСТРАЦИЯ
-                            </a>
-                            <a href="/auth.php" class="reg-btn">
-                                ВХОД
-                            </a>'
-            ?>
-            
-            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </div>
-    <nav>
-        <ul class="menu">
-            <li><a href="index.php">ГЛАВНАЯ</a></li>
-            <li><a href="#">НОВОСТИ</a></li>
-            <li><a href="models.php">МОДЕЛИ</a></li>
-            <li><a href="#">КЛИЕНТАМ</a></li>
-            <li><a href="#">СЕРВИС</a></li>
-            <li><a href="#">КОНТАКТЫ</a></li>
-            <li class="test-drive"><a href="#">ТЕСТ-ДРАЙВ</a></li>
-        </ul>
-    </nav>
 </header>
