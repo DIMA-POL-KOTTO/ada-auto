@@ -1,7 +1,17 @@
 <?php
 $is_logged_in = isset($_COOKIE['login']) && !empty($_COOKIE['login']);
 $login = $is_logged_in ? htmlspecialchars($_COOKIE['login']) : '';
+
+//текущая страница по URL
+$current_page = basename($_SERVER['REQUEST_URI'], '.php');
+// Обработка случая с параметрами: /model.php?id=5 → всё равно "model"
+if (strpos($current_page, '?') !== false) {
+    $current_page = substr($current_page, 0, strpos($current_page, '?')); // для страниц "подробнее"
+}
 ?>
+
+
+
 
 <header class="header">
     <div class="container">
@@ -11,8 +21,8 @@ $login = $is_logged_in ? htmlspecialchars($_COOKIE['login']) : '';
                 </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="index.php" class="active">Главная</a></li>
-                    <li><a href="models.php">Модельный ряд</a></li>
+                    <li><a href="index.php" class="<?=$current_page === '' || $current_page==='index' ? 'active':''?>">Главная</a></li>
+                    <li><a href="models.php" class="<?=$current_page === '' || $current_page==='models' ? 'active':''?>">Модельный ряд</a></li>
                     <li><a href="#">Авто в наличии</a></li>
                     <li><a href="#">Акции</a></li>
                     <li><a href="#">Контакты</a></li>

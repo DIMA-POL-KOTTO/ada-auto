@@ -74,7 +74,7 @@ include "blocks/header.php";
                 <label for="price">Цена до:</label>
                 <select id="price" class="filter-select">
                     <option value="all">Любая</option>
-                    <option value="60000">60 000$</option>
+                    <option value="20000">20 000$</option>
                     <option value="70000">70 000$</option>
                     <option value="80000">80 000$</option>
                     <option value="100000">100 000+$</option>

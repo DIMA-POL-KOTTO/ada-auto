@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modelItems.forEach((item, index) => {
             const m = models[index];
             const carBrand = m.brand.toLowerCase();
-            const carModel = m.brand.toLowerCase();
+            const carModel = m.model.toLowerCase();
 
             const matchesSearch = !query || carModel.includes(query) || carBrand.includes(query);
             const matchesBrand = brand === 'all' || m.brand === brand;
