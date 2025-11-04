@@ -6,7 +6,7 @@ $sql = "
     cmp.badge_type,
     cmp.description
     FROM car_models_popular cmp
-    JOIN car_models cm ON cmp.car_model_id = cm.id
+    JOIN car_in_stock cm ON cmp.car_model_id = cm.id
     WHERE cm.in_stock = 1
     ORDER BY cmp.sort_order ASC, cm.brand ASC
 ";

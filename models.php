@@ -1,4 +1,6 @@
-<?php require_once "lib/models.php"?>
+<?php 
+require_once "lib/models.php";
+require_once "lib/_helpers.php"?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -47,39 +49,7 @@ include "blocks/header.php";
                     <option value="all">Все модели</option>
                 </select>
             </div>
-            <div class="filter-group">
-                <label for="fuel">Тип топлива:</label>
-                <select id="fuel" class="filter-select">
-                    <option value="all">Любой</option>
-                    <?php
-                    $fuel_types = ['бензин', 'дизель', 'гибрид', 'электро'];
-                    foreach ($fuel_types as $fuel): ?>
-                        <option value="<?=htmlspecialchars($fuel)?>"><?=htmlspecialchars(ucfirst($fuel))?></option>
-                    <?php endforeach; ?>
-                    
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="transmission">Трансмиссия:</label>
-                <select id="transmission" class="filter-select">
-                    <option value="all">Любая</option>
-                    <?php
-                    $transmissions = ['автомат', 'механика', 'вариатор', 'робот'];
-                    foreach ($transmissions as $trans): ?>
-                        <option value="<?= htmlspecialchars($trans) ?>"><?= htmlspecialchars(ucfirst($trans)) ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="price">Цена до:</label>
-                <select id="price" class="filter-select">
-                    <option value="all">Любая</option>
-                    <option value="20000">20 000$</option>
-                    <option value="70000">70 000$</option>
-                    <option value="80000">80 000$</option>
-                    <option value="100000">100 000+$</option>
-                </select>
-            </div>
+            
             <button class="btn-outline reset-filters" id="reset-filters">Сбросить фильтры</button>
         </div>
     </div>
@@ -89,54 +59,31 @@ include "blocks/header.php";
     <div class="container">
         <div class="models-list" id="models-list">
             <!-- Модельные карточки -->
-            <?php foreach ($models as $car): ?>
-            <div class="model-item" 
-            data-brand="<?=htmlspecialchars(strtolower($car['brand'])) ?>" 
-            data-model="<?=htmlspecialchars(strtolower($car['model'])) ?>" 
-            data-fuel="<?=htmlspecialchars($car['fuel_type']) ?>" 
-            data-transmission="<?=htmlspecialchars($car['transmission']) ?>" 
-            data-price="<?= (int)$car['price']?>">
-                <div class="model-image">
-                    <?php if (!empty($car['image'])):?>
-                        <img src="<?=htmlspecialchars("images/models/".$car['image'])?>" alt="<?= htmlspecialchars($car['brand'].' '.$car['model'])?>">
-                    <?php else: ?>
-                        <div class="model-image-placeholder"><?= htmlspecialchars($car['brand']) ?> <?= htmlspecialchars($car['model']) ?></div>
-                    <?php endif;?>
-                </div>
-                <div class="model-details">
-                    <div class="model-header">
-                        <div class="model-title"><?=htmlspecialchars($car['brand'])?> <?= htmlspecialchars($car['model'])?></div>
-                        <span class="model-price">~<?= number_format($car['price'], 0, '', ' ') ?>$</span>
+            <?php foreach ($models as $index => $car): ?>
+                <?php
+                $folder = getModelFolder($car['brand'], $car['model']);
+                $imgPath = findModelImage($folder)
+                ?>
+                <div class="model-item"
+                    data-brand="<?= htmlspecialchars(strtolower($car['brand'])) ?>"
+                    data-model="<?= htmlspecialchars(strtolower($car['model'])) ?>">
+                    <a href="/stock.php?brand=<?= urlencode($car['brand'])?>&model=<?=urlencode($car['model']) ?>">
+                    <div class="model-image">
+                        <?php if ($imgPath):?>
+                            <img src="<?= htmlspecialchars($imgPath) ?>" alt="<?= htmlspecialchars($car['brand'].' '.$car['model'])?>">
+                        <?php else: ?>
+                            <div class="model-image-placeholder"><?= htmlspecialchars($car['brand']) ?> <?= htmlspecialchars($car['model']) ?></div>
+                        <?php endif;?>
                     </div>
-                    <div class="model-specs">
-                        <div class="spec-item"><i class="fas fa-gas-pump"></i> <span><?= htmlspecialchars(ucfirst($car['fuel_type'])) ?></span></div>
-                        <div class="spec-item"><i class="fas fa-cog"></i> <span><?= htmlspecialchars(ucfirst($car['transmission'])) ?></span></div>
-                        <div class="spec-item"><i class="fas fa-user"></i> <span><?= $car['seats'] ?> мест</span></div>
-                        <div class="spec-item"><i class="fas fa-tachometer-alt"></i> <span><?= $car['horse_power'] ?> л.с.</span></div>
-                    </div>
-                    <div class="model-actions"><a href="#" class="btn-primary">Подробнее</a></div>
+                    </a>
                 </div>
-            </div>
+            
             <?php endforeach;?>
         </div>
     </div>
 </section>
 <?php include "blocks/footer.php";?>
-<?php
-$jsModels = array_map(function($car) {
-    return [
-        'brand' => strtolower($car['brand']),
-        'model' => strtolower($car['model']),
-        'fuel_type' => $car['fuel_type'],
-        'transmission' => $car['transmission'],
-        'price' => (int)$car['price']
-    ];
-}, $models);
-?>
-<script>
-// Передаём данные в JS
-const models = <?= json_encode($jsModels) ?>;
-</script>
+
 <script src="scripts/script_models.js"></script>
 </body>
 </html>

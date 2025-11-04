@@ -2,7 +2,8 @@
 require "db_connect.php";
 //получение всех моделей
 $sql = "
-    SELECT * FROM car_models
+    SELECT brand, model
+    FROM car_models
     ORDER BY brand, model
 ";
 $stmt = $pdo->query($sql);

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модельный ряд - ADA Auto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style_models.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="photos/logo_porsche1.png" alt="ADA Auto" class="logo-image">
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="#" class="active">Модельный ряд</a></li>
+                        <li><a href="#">Авто в наличии</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#" class="btn-outline">Войти</a>
+                    <a href="#" class="btn-primary">Записаться на тест-драйв</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="models-hero">
+        <div class="container">
+            <h1>Модельный ряд</h1>
+            <p>Выберите подходящий автомобиль по параметрам или воспользуйтесь поиском</p>
+        </div>
+    </section>
+
+    <section class="models-filters">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="search">Поиск по модели:</label>
+                    <input type="text" id="search" class="filter-input" placeholder="Название...">
+                </div>
+                <div class="filter-group">
+                    <label for="brand">Марка:</label>
+                    <select id="brand" class="filter-select">
+                        <option value="all">Все марки</option>
+                        <option value="bmw">BMW</option>
+                        <option value="audi">Audi</option>
+                        <option value="volkswagen">Volkswagen</option>
+                        <option value="hyundai">Hyundai</option>
+                        <option value="mercedes">Mercedes-Benz</option>
+                        <option value="toyota">Toyota</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="model">Модель:</label>
+                    <select id="model" class="filter-select">
+                        <option value="all">Все модели</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="fuel">Тип топлива:</label>
+                    <select id="fuel" class="filter-select">
+                        <option value="all">Любой</option>
+                        <option value="бензин">Бензин</option>
+                        <option value="дизель">Дизель</option>
+                        <option value="гибрид">Гибрид</option>
+                        <option value="электро">Электро</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="transmission">Трансмиссия:</label>
+                    <select id="transmission" class="filter-select">
+                        <option value="all">Любая</option>
+                        <option value="автомат">Автомат</option>
+                        <option value="механика">Механика</option>
+                        <option value="вариатор">Вариатор</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="body-type">Тип кузова:</label>
+                    <select id="body-type" class="filter-select">
+                        <option value="all">Любой</option>
+                        <option value="sedan">Седан</option>
+                        <option value="suv">Кроссовер/SUV</option>
+                        <option value="hatchback">Хэтчбек</option>
+                        <option value="wagon">Универсал</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price">Цена до:</label>
+                    <select id="price" class="filter-select">
+                        <option value="all">Любая</option>
+                        <option value="60000">60 000 BYN</option>
+                        <option value="70000">70 000 BYN</option>
+                        <option value="80000">80 000 BYN</option>
+                        <option value="100000">100 000+ BYN</option>
+                    </select>
+                </div>
+                <button class="btn-outline reset-filters" id="reset-filters">Сбросить фильтры</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="models-grid">
+        <div class="container">
+            <div class="models-list" id="models-list">
+                <!-- Модельные карточки -->
+                <div class="model-item" data-brand="bmw" data-model="3 series" data-fuel="бензин" data-transmission="автомат" data-body="sedan" data-price="75000">
+                    <div class="model-image"><div class="model-image-placeholder bmw">BMW 3 Series</div></div>
+                    <div class="model-details">
+                        <div class="model-header">
+                            <div class="model-title">BMW 3 Series</div>
+                            <span class="model-price">~75 000 BYN</span>
+                        </div>
+                        <div class="model-specs">
+                            <div class="spec-item"><i class="fas fa-gas-pump"></i> <span>Бензин</span></div>
+                            <div class="spec-item"><i class="fas fa-cog"></i> <span>Автомат</span></div>
+                            <div class="spec-item"><i class="fas fa-user"></i> <span>5 мест</span></div>
+                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> <span>258 л.с.</span></div>
+                        </div>
+                        <div class="model-actions"><a href="#" class="btn-primary">Подробнее</a></div>
+                    </div>
+                </div>
+
+                <div class="model-item" data-brand="audi" data-model="a4" data-fuel="бензин" data-transmission="автомат" data-body="sedan" data-price="72000">
+                    <div class="model-image"><div class="model-image-placeholder audi">Audi A4</div></div>
+                    <div class="model-details">
+                        <div class="model-header">
+                            <div class="model-title">Audi A4</div>
+                            <span class="model-price">~72 000 BYN</span>
+                        </div>
+                        <div class="model-specs">
+                            <div class="spec-item"><i class="fas fa-gas-pump"></i> <span>Бензин</span></div>
+                            <div class="spec-item"><i class="fas fa-cog"></i> <span>Автомат</span></div>
+                            <div class="spec-item"><i class="fas fa-user"></i> <span>5 мест</span></div>
+                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> <span>204 л.с.</span></div>
+                        </div>
+                        <div class="model-actions"><a href="#" class="btn-primary">Подробнее</a></div>
+                    </div>
+                </div>
+
+                <div class="model-item" data-brand="volkswagen" data-model="tiguan" data-fuel="бензин" data-transmission="автомат" data-body="suv" data-price="68000">
+                    <div class="model-image"><div class="model-image-placeholder vw">Volkswagen Tiguan</div></div>
+                    <div class="model-details">
+                        <div class="model-header">
+                            <div class="model-title">Volkswagen Tiguan</div>
+                            <span class="model-price">~68 000 BYN</span>
+                        </div>
+                        <div class="model-specs">
+                            <div class="spec-item"><i class="fas fa-gas-pump"></i> <span>Бензин</span></div>
+                            <div class="spec-item"><i class="fas fa-cog"></i> <span>Автомат</span></div>
+                            <div class="spec-item"><i class="fas fa-user"></i> <span>5-7 мест</span></div>
+                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> <span>190 л.с.</span></div>
+                        </div>
+                        <div class="model-actions"><a href="#" class="btn-primary">Подробнее</a></div>
+                    </div>
+                </div>
+
+                <div class="model-item" data-brand="hyundai" data-model="tucson" data-fuel="бензин" data-transmission="автомат" data-body="suv" data-price="55000">
+                    <div class="model-image"><div class="model-image-placeholder hyundai">Hyundai Tucson</div></div>
+                    <div class="model-details">
+                        <div class="model-header">
+                            <div class="model-title">Hyundai Tucson</div>
+                            <span class="model-price">~55 000 BYN</span>
+                        </div>
+                        <div class="model-specs">
+                            <div class="spec-item"><i class="fas fa-gas-pump"></i> <span>Бензин</span></div>
+                            <div class="spec-item"><i class="fas fa-cog"></i> <span>Автомат</span></div>
+                            <div class="spec-item"><i class="fas fa-user"></i> <span>5 мест</span></div>
+                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> <span>180 л.с.</span></div>
+                        </div>
+                        <div class="model-actions"><a href="#" class="btn-primary">Подробнее</a></div>
+                    </div>
+                </div>
+
+                <div class="model-item" data-brand="mercedes" data-model="c-class" data-fuel="бензин" data-transmission="автомат" data-body="sedan" data-price="85000">
+                    <div class="model-image"><div class="model-image-placeholder mercedes">Mercedes C-Class</div></div>
+                    <div class="model-details">
+                        <div class="model-header">
+                            <div class="model-title">Mercedes-Benz C-Class</div>
+                            <span class="model-price">~85 000 BYN</span>
+                        </div>
+                        <div class="model-specs">
+                            <div class="spec-item"><i class="fas fa-gas-pump"></i> <span>Бензин</span></div>
+                            <div class="spec-item"><i class="fas fa-cog"></i> <span>Автомат</span></div>
+                            <div class="spec-item"><i class="fas fa-user"></i> <span>5 мест</span></div>
+                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> <span>258 л.с.</span></div>
+                        </div>
+                        <div class="model-actions"><a href="#" class="btn-primary">Подробнее</a></div>
+                    </div>
+                </div>
+
+                <div class="model-item" data-brand="toyota" data-model="rav4" data-fuel="гибрид" data-transmission="автомат" data-body="suv" data-price="62000">
+                    <div class="model-image"><div class="model-image-placeholder toyota">Toyota RAV4</div></div>
+                    <div class="model-details">
+                        <div class="model-header">
+                            <div class="model-title">Toyota RAV4 Hybrid</div>
+                            <span class="model-price">~62 000 BYN</span>
+                        </div>
+                        <div class="model-specs">
+                            <div class="spec-item"><i class="fas fa-gas-pump"></i> <span>Гибрид</span></div>
+                            <div class="spec-item"><i class="fas fa-cog"></i> <span>Автомат</span></div>
+                            <div class="spec-item"><i class="fas fa-user"></i> <span>5 мест</span></div>
+                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> <span>222 л.с.</span></div>
+                        </div>
+                        <div class="model-actions"><a href="#" class="btn-primary">Подробнее</a></div>
+                    </div>
+                </div>
+
+                <div class="model-item" data-brand="bmw" data-model="x3" data-fuel="дизель" data-transmission="автомат" data-body="suv" data-price="82000">
+                    <div class="model-image"><div class="model-image-placeholder bmw">BMW X3 xDrive20d</div></div>
+                    <div class="model-details">
+                        <div class="model-header">
+                            <div class="model-title">BMW X3 xDrive20d</div>
+                            <span class="model-price">~82 000 BYN</span>
+                        </div>
+                        <div class="model-specs">
+                            <div class="spec-item"><i class="fas fa-gas-pump"></i> <span>Дизель</span></div>
+                            <div class="spec-item"><i class="fas fa-cog"></i> <span>Автомат</span></div>
+                            <div class="spec-item"><i class="fas fa-user"></i> <span>5 мест</span></div>
+                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> <span>190 л.с.</span></div>
+                        </div>
+                        <div class="model-actions"><a href="#" class="btn-primary">Подробнее</a></div>
+                    </div>
+                </div>
+
+                <div class="model-item" data-brand="audi" data-model="q5" data-fuel="электро" data-transmission="автомат" data-body="suv" data-price="98000">
+                    <div class="model-image"><div class="model-image-placeholder audi">Audi Q5 e-tron</div></div>
+                    <div class="model-details">
+                        <div class="model-header">
+                            <div class="model-title">Audi Q5 e-tron (электро)</div>
+                            <span class="model-price">~98 000 BYN</span>
+                        </div>
+                        <div class="model-specs">
+                            <div class="spec-item"><i class="fas fa-bolt"></i> <span>Электро</span></div>
+                            <div class="spec-item"><i class="fas fa-cog"></i> <span>Автомат</span></div>
+                            <div class="spec-item"><i class="fas fa-user"></i> <span>5 мест</span></div>
+                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> <span>340 л.с.</span></div>
+                        </div>
+                        <div class="model-actions"><a href="#" class="btn-primary">Подробнее</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ADA Auto</h3>
+                    <p>Официальный дилер ведущих автомобильных марок в Беларуси. Мы предлагаем лучшие условия покупки и обслуживания автомобилей.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Автомобили</h4>
+                    <ul>
+                        <li><a href="models.html">Модельный ряд</a></li>
+                        <li><a href="#">Акции и спецпредложения</a></li>
+                        <li><a href="#">Новые автомобили</a></li>
+                        <li><a href="#">Конфигуратор</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#">Кредитование</a></li>
+                        <li><a href="#">Страхование</a></li>
+                        <li><a href="#">Trade-In</a></li>
+                        <li><a href="#">Сервисное обслуживание</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> г. Минск, пр. Победителей, 9</li>
+                        <li><i class="fas fa-phone"></i> +375 (29) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@adaauto.by</li>
+                        <li><i class="fas fa-clock"></i> Пн-Пт: 9:00-20:00, Сб-Вс: 10:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ADA Auto. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="models.js"></script>
+
+</body>
+</html>
+

@@ -23,7 +23,7 @@ if (strpos($current_page, '?') !== false) {
                 <ul>
                     <li><a href="index.php" class="<?=$current_page === '' || $current_page==='index' ? 'active':''?>">Главная</a></li>
                     <li><a href="models.php" class="<?=$current_page === '' || $current_page==='models' ? 'active':''?>">Модельный ряд</a></li>
-                    <li><a href="#">Авто в наличии</a></li>
+                    <li><a href="models_stock.php" class="<?=$current_page === '' || $current_page==='models_stock' ? 'active':''?>">Авто в наличии</a></li>
                     <li><a href="#">Акции</a></li>
                     <li><a href="#">Контакты</a></li>
                 </ul>
