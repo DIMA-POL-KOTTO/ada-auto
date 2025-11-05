@@ -75,7 +75,9 @@ include "blocks/header.php";
                             <div class="model-image-placeholder"><?= htmlspecialchars($car['brand']) ?> <?= htmlspecialchars($car['model']) ?></div>
                         <?php endif;?>
                     </div>
+                    
                     </a>
+                    <div class="model-title" style="text-align: center;"><strong><?= htmlspecialchars($car['brand']) ?> <?= htmlspecialchars($car['model']) ?></strong></div>
                 </div>
             
             <?php endforeach;?>
