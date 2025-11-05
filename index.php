@@ -1,5 +1,6 @@
 <?php
 require_once "lib/popular_models.php";
+require_once "lib/_helpers.php";
 ?>
 
 <!DOCTYPE html>
@@ -130,8 +131,12 @@ include "blocks/header.php";
                                 </div>
                             <?php endif; ?>
                             <div class="model-image">
-                                <?php if(!empty($car['image'])): ?>
-                                    <img src="images/models/<?=htmlspecialchars($car["image"]) ?>" alt="<?=htmlspecialchars($car['brand'].' '.$car['model']) ?>">
+                                <?php
+                                $folder = getModelFolder($car['brand'], $car['model']);
+                                $imgPath = findModelImage($folder, $car['id'])
+                                ?>
+                                <?php if($imgPath): ?>
+                                    <img src="<?=htmlspecialchars($imgPath) ?>" alt="<?=htmlspecialchars($car['brand'].' '.$car['model']) ?>">
                                 <?php else: ?>
                                     <div class="model-image-placeholder">
                                         <?= htmlspecialchars($car['brand']) ?> <?= htmlspecialchars($car['model']) ?>
