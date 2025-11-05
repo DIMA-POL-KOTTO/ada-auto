@@ -125,12 +125,12 @@ $brands = $pdo->query("SELECT DISTINCT brand FROM car_in_stock ORDER BY brand")-
                 <div class="model-details">
                     <div class="model-header">
                         <div class="model-title"><?= htmlspecialchars($car['brand']) ?> <?= htmlspecialchars($car['model']) ?></div>
-                        <span class="model-price">~<?= number_format($car['price'], 0, '', ' ') ?> $</span>
+                        <span class="model-price"><?= number_format($car['price'], 0, '', ' ') ?> $</span>
                     </div>
                     <div class="model-specs">
                         <div class="spec-item">
                             <i class="fas fa-gas-pump"></i> 
-                            <span><?= htmlspecialchars(ucfirst($car['fuel_type'])) ?></span>
+                            <span><?=$car['engine_capacity']?> | <?= htmlspecialchars(ucfirst($car['fuel_type'])) ?></span>
                         </div>
                         <div class="spec-item">
                             <i class="fas fa-cog"></i> 
@@ -138,7 +138,7 @@ $brands = $pdo->query("SELECT DISTINCT brand FROM car_in_stock ORDER BY brand")-
                         </div>
                         <div class="spec-item">
                             <i class="fas fa-user"></i> 
-                            <span><?= $car['seats'] ?> мест</span>
+                            <span><?= $car['seats'] ?> мест | <?= htmlspecialchars($car['body_type']) ?></span>
                         </div>
                         <div class="spec-item">
                             <i class="fas fa-tachometer-alt"></i> 
