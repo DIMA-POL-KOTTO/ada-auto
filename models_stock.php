@@ -21,7 +21,7 @@ $brands = $pdo->query("SELECT DISTINCT brand FROM car_in_stock ORDER BY brand")-
 
 <section class="models-hero">
     <div class="container">
-        <h1>Авто в наличии6666666666666666</h1>
+        <h1>Авто в наличии</h1>
         <p>Выберите подходящий автомобиль по параметрам или воспользуйтесь поиском</p>
     </div>
 </section>

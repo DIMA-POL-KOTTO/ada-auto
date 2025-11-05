@@ -20,7 +20,7 @@ include "blocks/header.php";
 ?>
 <section class="models-hero">
     <div class="container">
-        <h1>Модельный ряд77777777777777777777</h1>
+        <h1>Модельный ряд</h1>
         <p>Выберите подходящий автомобиль по параметрам или воспользуйтесь поиском</p>
     </div>
 </section>
