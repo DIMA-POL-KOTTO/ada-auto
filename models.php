@@ -67,7 +67,7 @@ include "blocks/header.php";
                 <div class="model-item"
                     data-brand="<?= htmlspecialchars(strtolower($car['brand'])) ?>"
                     data-model="<?= htmlspecialchars(strtolower($car['model'])) ?>">
-                    <a href="/stock.php?brand=<?= urlencode($car['brand'])?>&model=<?=urlencode($car['model']) ?>">
+                    <a href="/models_stock.php?brand=<?= urlencode($car['brand'])?>&model=<?=urlencode($car['model']) ?>">
                     <div class="model-image">
                         <?php if ($imgPath):?>
                             <img src="<?= htmlspecialchars($imgPath) ?>" alt="<?= htmlspecialchars($car['brand'].' '.$car['model'])?>">
