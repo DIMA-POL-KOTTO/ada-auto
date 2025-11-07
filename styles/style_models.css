@@ -58,10 +58,10 @@
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
-.reset-filters {
+/*.reset-filters {
     align-self: flex-end;
     margin-left: auto;
-}
+}*/
 
 /* Карточки моделей */
 .models-grid {
@@ -73,11 +73,14 @@
     gap: 25px;
 }
 .model-item {
-    background: white;
+     background: white;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
+    text-align: center;
+    width: 300px; /* ← фиксированная ширина */
+    margin: 0 auto; /* ← центрирование внутри grid-ячейки */
 }
 /*.model-item:hover {
     transform: translateY(-8px);
@@ -332,4 +335,53 @@
     object-fit: contain; /* ← КЛЮЧЕВОЕ: не обрезает, вписывает целиком */
     object-position: center;
     
+}
+
+
+
+
+
+
+/* Заголовок бренда */
+.brand-section-title {
+    font-size: 2.2rem;
+    margin: 60px 0 30px;
+    color: var(--dark-color);
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    scroll-margin-top: 120px;
+}
+
+
+
+/* Сетка моделей под брендом */
+.brand-models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    justify-content: center;
+    gap: 25px;
+    margin: 0 auto 40px;
+    max-width: 1200px;
+}
+
+/* Адаптивность для сетки брендов */
+@media (max-width: 1200px) {
+    .brand-models-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .brand-models-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px) {
+    .brand-models-grid {
+        grid-template-columns: 1fr;
+    }
+    .brand-section-title {
+        font-size: 1.8rem;
+        margin: 40px 0 20px;
+    }
 }

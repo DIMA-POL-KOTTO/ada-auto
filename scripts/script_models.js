@@ -2,69 +2,37 @@ document.addEventListener('DOMContentLoaded', function () {
     const modelItems = document.querySelectorAll('.model-item');
     const searchInput = document.getElementById('search');
     const brandSelect = document.getElementById('brand');
-    const modelSelect = document.getElementById('model');
-    const resetBtn = document.getElementById('reset-filters');
+    
 
-    // Группировка моделей по маркам — читаем из DOM
+    // Группировка по брендам (для селекта моделей — опционально)
     const modelsByBrand = {};
     modelItems.forEach(item => {
         const brand = item.dataset.brand;
         const model = item.dataset.model;
-        if (!modelsByBrand[brand]) {
-            modelsByBrand[brand] = new Set();
-        }
+        if (!modelsByBrand[brand]) modelsByBrand[brand] = new Set();
         modelsByBrand[brand].add(model);
     });
 
-    function updateModelOptions() {
-        const selectedBrand = brandSelect.value;
-        modelSelect.innerHTML = '<option value="all">Все модели</option>';
-        if (selectedBrand !== "all" && modelsByBrand[selectedBrand]) {
-            modelsByBrand[selectedBrand].forEach(modelName => {
-                const opt = document.createElement('option');
-                opt.value = modelName;
-                // Красивое название: rav4 → Rav4, bmw x3 → Bmw X3
-                opt.textContent = modelName
-                    .split(' ')
-                    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-                    .join(' ');
-                modelSelect.appendChild(opt);
-            });
+    // 🔥 Прокрутка к бренду при выборе
+    brandSelect.addEventListener('change', function() {
+        const brand = this.value;
+        if (brand && brand !== 'all') {
+            // Генерируем якорь: "bmw" → "#bmw"
+            const anchor = '#' + brand;
+            const element = document.querySelector(anchor);
+            if (element) {
+                // Плавная прокрутка
+                element.scrollIntoView({ behavior: 'smooth', block: 'start'});
+            }
+        } else {
+            // Если "Все марки" — прокручиваем наверх
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            filterModels();
         }
-        filterModels();
-    }
-
-    function filterModels() {
-        const query = searchInput.value.toLowerCase().trim();
-        const brand = brandSelect.value;
-        const model = modelSelect.value;
-
-        modelItems.forEach(item => {
-            const carBrand = item.dataset.brand;
-            const carModel = item.dataset.model;
-
-            const matchesSearch = !query || 
-                carModel.includes(query) || 
-                carBrand.includes(query);
-            const matchesBrand = brand === 'all' || carBrand === brand;
-            const matchesModel = model === 'all' || carModel === model;
-
-            const show = matchesSearch && matchesBrand && matchesModel;
-            item.style.display = show ? 'block' : 'none';
-        });
-    }
-
-    // Слушатели
-    searchInput.addEventListener('input', filterModels);
-    brandSelect.addEventListener('change', updateModelOptions);
-    modelSelect.addEventListener('change', filterModels);
-
-    resetBtn.addEventListener('click', function() {
-        searchInput.value = '';
-        brandSelect.value = 'all';
-        modelSelect.innerHTML = '<option value="all">Все модели</option>';
-        filterModels();
     });
+
+    searchInput.addEventListener('input', filterModels);
+
 
     // Мобильное меню (без изменений)
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');

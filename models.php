@@ -29,10 +29,6 @@ include "blocks/header.php";
     <div class="container">
         <div class="filters-container">
             <div class="filter-group">
-                <label for="search">Поиск по модели:</label>
-                <input type="text" id="search" class="filter-input" placeholder="Название...">
-            </div>
-            <div class="filter-group">
                 <label for="brand">Марка:</label>
                 <select id="brand" class="filter-select">
                     <option value="all">Все марки</option>
@@ -43,23 +39,27 @@ include "blocks/header.php";
                     <?php endforeach; ?>
                 </select>
             </div>
-            <div class="filter-group">
-                <label for="model">Модель:</label>
-                <select id="model" class="filter-select">
-                    <option value="all">Все модели</option>
-                </select>
-            </div>
-            
-            <button class="btn-outline reset-filters" id="reset-filters">Сбросить фильтры</button>
         </div>
     </div>
 </section>
 
  <section class="models-grid">
     <div class="container">
-        <div class="models-list" id="models-list">
+        
             <!-- Модельные карточки -->
-            <?php foreach ($models as $index => $car): ?>
+            <?php 
+            $current_brand = null;
+            foreach ($models as $car): 
+                if ($current_brand !== $car['brand']):
+                    if ($current_brand !== null):
+                        echo '</div>';
+                    endif;
+                    $current_brand = $car['brand'];
+                    $brand_anchor = strtolower( $car['brand']);
+                    ?>
+                    <h2 id="<?=$brand_anchor?>" class="brand-section-title"><?= htmlspecialchars($car['brand']) ?></h2>
+                    <div class="brand-models-grid">
+                <?php endif;?>
                 <?php
                 $folder = getModelFolder($car['brand'], $car['model']);
                 $imgPath = findModelImage($folder)
@@ -77,11 +77,12 @@ include "blocks/header.php";
                     </div>
                     
                     </a>
-                    <div class="model-title" style="text-align: center;"><strong><?= htmlspecialchars($car['brand']) ?> <?= htmlspecialchars($car['model']) ?></strong></div>
+                    <div class="model-title" style="text-align: center;"><strong><?= htmlspecialchars($car['model']) ?></strong></div>
                 </div>
             
             <?php endforeach;?>
-        </div>
+            <?php if ($current_brand !== null): echo '</div>'; endif; ?>
+        
     </div>
 </section>
 <?php include "blocks/footer.php";?>
