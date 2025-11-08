@@ -13,6 +13,59 @@ document.addEventListener('DOMContentLoaded', function () {
         modelsByBrand[brand].add(model);
     });
 
+    // 🔥 ОБРАБОТКА КЛИКОВ ПО КАРТОЧКАМ - ПЕРЕХОД НА АВТО В НАЛИЧИИ
+    modelItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            // Проверяем, не кликнули ли по кнопке "Подробнее"
+            if (e.target.closest('.btn-details') || e.target.closest('.btn-primary')) {
+                return; // Позволяем кнопке работать по своей логике
+            }
+            
+            // Получаем данные о марке и модели
+            const brand = this.dataset.brand;
+            const model = this.dataset.model;
+            
+            if (brand && model) {
+                // Формируем URL для перехода на страницу "Авто в наличии"
+                const url = new URL('/models_stock.php', window.location.origin);
+                
+                // Добавляем параметры фильтрации
+                url.searchParams.set('brand', brand.toUpperCase());
+                url.searchParams.set('model', model.toUpperCase());
+                
+                // Переходим на страницу
+                window.location.href = url.toString();
+            }
+        });
+    });
+
+    // 🔥 ОБРАБОТКА КЛИКОВ ПО КНОПКАМ "ПОДРОБНЕЕ" - ПЕРЕХОД НА ДЕТАЛИ МОДЕЛИ
+    document.querySelectorAll('.btn-details, .model-actions .btn-primary').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Находим родительскую карточку
+            const card = this.closest('.model-item');
+            if (card) {
+                const brand = card.dataset.brand;
+                const model = card.dataset.model;
+                
+                if (brand && model) {
+                    // Формируем URL для перехода на страницу деталей модели
+                    const url = new URL('/model_details.php', window.location.origin);
+                    
+                    // Добавляем параметры марки и модели
+                    url.searchParams.set('brand', brand.toUpperCase());
+                    url.searchParams.set('model', model.toUpperCase());
+                    
+                    // Переходим на страницу
+                    window.location.href = url.toString();
+                }
+            }
+        });
+    });
+
     // 🔥 Прокрутка к бренду при выборе
     brandSelect.addEventListener('change', function() {
         const brand = this.value;

@@ -1,0 +1,502 @@
+/* Герой для деталей модели */
+.model-details-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 140px 0 60px;
+    margin-top: 70px;
+}
+
+.model-details-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+    color: white;
+}
+
+.breadcrumbs .separator {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs .current {
+    color: white;
+    font-weight: 500;
+}
+
+/* Основной контент */
+.model-content {
+    padding: 60px 0;
+    background: var(--light-color);
+}
+
+.model-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Галерея */
+.model-gallery {
+    position: sticky;
+    top: 100px;
+}
+
+.main-image {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.main-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    display: block;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.image-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+/* Градиенты для заглушек */
+.image-placeholder.bmw {
+    background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+}
+.image-placeholder.audi {
+    background: linear-gradient(45deg, #000046, #1CB5E0);
+}
+.image-placeholder.vw {
+    background: linear-gradient(45deg, #0052D4, #65C7F7, #9CECFB);
+}
+.image-placeholder.hyundai {
+    background: linear-gradient(45deg, #8A2387, #E94057, #F27121);
+}
+.image-placeholder.mercedes {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+}
+.image-placeholder.toyota {
+    background: linear-gradient(45deg, #11998e, #38ef7d);
+}
+
+/* Миниатюры */
+.image-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.thumbnail {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Информация о модели */
+.model-info {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Цена и доступность */
+.price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.availability {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.availability.in-stock {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* Быстрые характеристики */
+.quick-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+.spec-item i {
+    color: var(--primary-color);
+    width: 16px;
+    text-align: center;
+}
+
+.spec-item strong {
+    color: var(--dark-color);
+}
+
+/* Кнопки действий */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.action-buttons .btn-primary,
+.action-buttons .btn-outline {
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.action-buttons .btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.action-buttons .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.action-buttons .btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.action-buttons .btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* Секции с информацией */
+.specs-section,
+.description-section,
+.safety-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.specs-section h3,
+.description-section h3,
+.safety-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.specs-section h3 i,
+.description-section h3 i,
+.safety-section h3 i {
+    color: var(--primary-color);
+}
+
+/* Сетка характеристик */
+.specs-grid {
+    display: grid;
+    gap: 25px;
+}
+
+.spec-category h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.spec-row:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.spec-value {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+/* Описание */
+.description-content p {
+    line-height: 1.7;
+    color: var(--secondary-color);
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Рейтинг безопасности */
+.safety-rating {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 4px;
+}
+
+.rating-stars .fa-star {
+    color: #d1d5db;
+    font-size: 1.2rem;
+}
+
+.rating-stars .fa-star.active {
+    color: #f59e0b;
+}
+
+.rating-text {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* Похожие модели */
+.similar-models {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.similar-models h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-align: center;
+}
+
+.similar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.similar-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.similar-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.similar-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.similar-info p {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.similar-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .model-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .model-gallery {
+        position: static;
+    }
+    
+    .image-thumbnails {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .model-details-hero {
+        padding: 120px 0 40px;
+    }
+    
+    .model-details-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .model-content {
+        padding: 40px 0;
+    }
+    
+    .model-info {
+        padding: 20px;
+    }
+    
+    .price-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .quick-specs {
+        grid-template-columns: 1fr;
+    }
+    
+    .image-thumbnails {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .similar-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .model-details-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .main-image img {
+        height: 300px;
+    }
+    
+    .image-placeholder {
+        height: 300px;
+        font-size: 1.2rem;
+    }
+    
+    .image-placeholder i {
+        font-size: 2.5rem;
+    }
+    
+    .image-thumbnails {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .price {
+        font-size: 1.7rem;
+    }
+    
+    .similar-grid {
+        grid-template-columns: 1fr;
+    }
+}

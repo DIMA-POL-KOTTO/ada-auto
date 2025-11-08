@@ -43,48 +43,84 @@ include "blocks/header.php";
     </div>
 </section>
 
- <section class="models-grid">
+<section class="models-grid">
     <div class="container">
-        
-            <!-- Модельные карточки -->
-            <?php 
-            $current_brand = null;
-            foreach ($models as $car): 
-                if ($current_brand !== $car['brand']):
-                    if ($current_brand !== null):
-                        echo '</div>';
-                    endif;
-                    $current_brand = $car['brand'];
-                    $brand_anchor = strtolower( $car['brand']);
-                    ?>
-                    <h2 id="<?=$brand_anchor?>" class="brand-section-title"><?= htmlspecialchars($car['brand']) ?></h2>
-                    <div class="brand-models-grid">
-                <?php endif;?>
-                <?php
-                $folder = getModelFolder($car['brand'], $car['model']);
-                $imgPath = findModelImage($folder)
+        <?php 
+        $current_brand = null;
+        foreach ($models as $car): 
+            if ($current_brand !== $car['brand']):
+                if ($current_brand !== null):
+                    echo '</div>';
+                endif;
+                $current_brand = $car['brand'];
+                $brand_anchor = strtolower($car['brand']);
                 ?>
-                <div class="model-item"
-                    data-brand="<?= htmlspecialchars(strtolower($car['brand'])) ?>"
-                    data-model="<?= htmlspecialchars(strtolower($car['model'])) ?>">
-                    <a href="/models_stock.php?brand=<?= urlencode($car['brand'])?>&model=<?=urlencode($car['model']) ?>">
-                    <div class="model-image">
-                        <?php if ($imgPath):?>
-                            <img src="<?= htmlspecialchars($imgPath) ?>" alt="<?= htmlspecialchars($car['brand'].' '.$car['model'])?>">
-                        <?php else: ?>
-                            <div class="model-image-placeholder"><?= htmlspecialchars($car['brand']) ?> <?= htmlspecialchars($car['model']) ?></div>
-                        <?php endif;?>
-                    </div>
-                    
-                    </a>
-                    <div class="model-title" style="text-align: center;"><strong><?= htmlspecialchars($car['model']) ?></strong></div>
+                
+                <?php
+                $brand_name = $car['brand'];
+                $brand_slug = strtolower($brand_name);
+                $logo_path = "assets/brand-logos/{$brand_slug}.svg";
+
+                // Проверяем, существует ли SVG-логотип; если нет — пробуем PNG
+                if (!file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $logo_path)) {
+                    $logo_path = "images/logos/{$brand_slug}.svg";
+                    if (!file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $logo_path)) {
+                        $logo_path = null; // логотип не найден
+                    }
+                }
+                ?>
+
+                <div class="brand-section-header">
+                    <?php if ($logo_path): ?>
+                        <div class="brand-logo-wrapper">
+                            <img src="<?= htmlspecialchars($logo_path) ?>" 
+                                alt="<?= htmlspecialchars($brand_name) ?>" 
+                                class="brand-logo"
+                                loading="lazy">
+                        </div>
+                    <?php endif; ?>
+                    <h2 id="<?= $brand_anchor ?>" class="brand-section-title">
+                        <?= htmlspecialchars($brand_name) ?>
+                    </h2>
                 </div>
+                <div class="brand-models-grid">
+            <?php endif;?>
             
-            <?php endforeach;?>
-            <?php if ($current_brand !== null): echo '</div>'; endif; ?>
+            <?php
+            $folder = getModelFolder($car['brand'], $car['model']);
+            $imgPath = findModelImage($folder);
+            ?>
+            
+            <div class="model-item"
+                data-brand="<?= htmlspecialchars(strtolower($car['brand'])) ?>"
+                data-model="<?= htmlspecialchars(strtolower($car['model'])) ?>">
+                <a href="/model_details.php?brand=<?= urlencode($car['brand']) ?>&model=<?= urlencode($car['model']) ?>" class="model-link">
+                    <div class="model-image">
+                        <?php if ($imgPath): ?>
+                            <img src="<?= htmlspecialchars($imgPath) ?>" 
+                                 alt="<?= htmlspecialchars($car['brand'].' '.$car['model'])?>">
+                        <?php else: ?>
+                            <div class="model-image-placeholder <?= strtolower($car['brand']) ?>">
+                                <?= htmlspecialchars($car['brand']) ?><br><?= htmlspecialchars($car['model']) ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="model-details">
+                        <div class="model-header">
+                            <div class="model-title"><?= htmlspecialchars($car['model']) ?></div>
+                        </div>
+                        <div class="model-actions">
+                            <button type="button" class="btn-primary btn-details">Подробнее</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
         
+        <?php endforeach;?>
+        <?php if ($current_brand !== null): echo '</div>'; endif; ?>
     </div>
 </section>
+
 <?php include "blocks/footer.php";?>
 
 <script src="scripts/script_models.js"></script>

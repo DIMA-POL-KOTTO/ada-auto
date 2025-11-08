@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 ADA Auto. Все права защищены.</p>
+            <p>&copy; 2025 ADA Auto. Все права защищены.</p>
         </div>
     </div>
 </footer>
