@@ -94,7 +94,7 @@ include "blocks/header.php";
             <div class="model-item"
                 data-brand="<?= htmlspecialchars(strtolower($car['brand'])) ?>"
                 data-model="<?= htmlspecialchars(strtolower($car['model'])) ?>">
-                <a href="/model_details.php?brand=<?= urlencode($car['brand']) ?>&model=<?= urlencode($car['model']) ?>" class="model-link">
+                <a href="/models_stock.php?brand=<?= urlencode($car['brand']) ?>&model=<?= urlencode($car['model']) ?>" class="model-link">
                     <div class="model-image">
                         <?php if ($imgPath): ?>
                             <img src="<?= htmlspecialchars($imgPath) ?>" 
