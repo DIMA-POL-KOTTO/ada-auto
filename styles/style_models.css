@@ -234,7 +234,6 @@
     justify-content: center;
     overflow: hidden;
     border-radius: 8px;
-    background: #f8f9fa;
     flex-shrink: 0;
 }
 
@@ -246,9 +245,7 @@
     transition: transform 0.2s;
 }
 
-.brand-logo:hover {
-    transform: scale(1.05);
-}
+
 
 /* Специфичные стили для модельного ряда */
 .brand-models-grid .model-link {

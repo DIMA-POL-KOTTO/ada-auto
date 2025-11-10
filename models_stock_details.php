@@ -1,5 +1,5 @@
 <?php
-require_once 'lib/model_details_data.php';
+require_once 'lib/models_stock_details.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ require_once 'lib/model_details_data.php';
         <nav class="breadcrumbs">
             <a href="/">Главная</a>
             <span class="separator">/</span>
-            <a href="models.php">Модельный ряд</a>
+            <a href="models.php">Авто в наличии</a>
             <span class="separator">/</span>
             <span class="current"><?= htmlspecialchars($car['brand'] . ' ' . $car['model']) ?></span>
         </nav>
@@ -189,7 +189,7 @@ require_once 'lib/model_details_data.php';
                         <h4><?= htmlspecialchars($similar['brand']) ?> <?= htmlspecialchars($similar['model']) ?></h4>
                         <p>Год: <?= htmlspecialchars($similar['year']) ?></p>
                         <div class="similar-price">$<?= number_format($similar['price'], 0, '', ' ') ?></div>
-                        <a href="model_details.php?brand=<?= urlencode($similar['brand']) ?>&model=<?= urlencode($similar['model']) ?>" class="btn-outline btn-sm">Подробнее</a>
+                        <a href="/models_stock_details.php?car_id=<?= $similar['id'] ?>" class="btn-outline btn-sm">Подробнее</a>
                     </div>
                 </div>
                 <?php endforeach; ?>
