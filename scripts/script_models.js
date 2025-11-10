@@ -48,19 +48,11 @@ document.addEventListener('DOMContentLoaded', function () {
             // Находим родительскую карточку
             const card = this.closest('.model-item');
             if (card) {
-                const brand = card.dataset.brand;
-                const model = card.dataset.model;
+                const carId = card.dataset.carId;
                 
-                if (brand && model) {
-                    // Формируем URL для перехода на страницу деталей модели
-                    const url = new URL('/model_details.php', window.location.origin);
+                if (carId) {
                     
-                    // Добавляем параметры марки и модели
-                    url.searchParams.set('brand', brand.toUpperCase());
-                    url.searchParams.set('model', model.toUpperCase());
-                    
-                    // Переходим на страницу
-                    window.location.href = url.toString();
+                    window.location.href = 'model_details.php?id=' + carId;
                 }
             }
         });

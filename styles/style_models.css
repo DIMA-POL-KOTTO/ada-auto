@@ -245,9 +245,7 @@
     transition: transform 0.2s;
 }
 
-.brand-logo:hover {
-    transform: scale(1.05);
-}
+
 
 /* Специфичные стили для модельного ряда */
 .brand-models-grid .model-link {

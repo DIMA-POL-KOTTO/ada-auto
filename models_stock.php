@@ -165,7 +165,7 @@ $brands = $all_brands;
                         </div>
                     </div>
                     <div class="model-actions">
-                        <a href="/test-drive.php?car_id=<?= $car['id'] ?>" class="btn-primary">Тест-драйв</a>
+                        <a href="/models_stock_details.php?car_id=<?= $car['id'] ?>" class="btn-primary">Подробнее</a>
                     </div>
                 </div>
             </div>

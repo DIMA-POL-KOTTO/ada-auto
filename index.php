@@ -164,8 +164,7 @@ include "blocks/header.php";
                                     <?=htmlspecialchars($car['description'])?>
                                 </div>
                                 <div class="model-actions">
-                                    <a href="#" class="btn-primary">Подробнее</a>
-                                    <a href="#" class="btn-outline">Тест-драйв</a>
+                                    <a href="models_stock_details.php?car_id=<?=$car["id"]?>" class="btn-primary">Подробнее</a>
                                 </div>
                             </div>
                         </div>
