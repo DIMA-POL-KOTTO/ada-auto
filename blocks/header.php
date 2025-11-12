@@ -16,8 +16,8 @@ if ($current_page === '') {
 <header class="header">
     <div class="container">
         <div class="header-content">
-                <div class="logo">
-                    <img src="images/photos/passat_logo.png" alt="ADA Auto" class="logo-image">
+                <div class="logo" >
+                    <a href="/"><img src="images/photos/passat_logo.png" alt="ADA Auto" class="logo-image"></a>
                 </div>
             <nav class="nav">
                 <ul>
