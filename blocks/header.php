@@ -24,7 +24,6 @@ if ($current_page === '') {
                     <li><a href="/" class="<?= ($current_page === 'index') ? 'active':''?>">Главная</a></li>
                     <li><a href="/models.php" class="<?= ($current_page==='models') ? 'active':''?>">Модельный ряд</a></li>
                     <li><a href="/models_stock.php" class="<?= ($current_page==='models_stock') ? 'active':''?>">Авто в наличии</a></li>
-                    <li><a href="#">Акции</a></li>
                     <li><a href="/about.php" class="<?= ($current_page==='about') ? 'active':''?>">Контакты</a></li>
                 </ul>
             </nav>

@@ -69,8 +69,6 @@ include "blocks/header.php";
             </div>
         </section>
 
-        
-
         <!-- Команда -->
         <section class="about-section">
             <h2>Наша команда</h2>
@@ -78,7 +76,10 @@ include "blocks/header.php";
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-photo">
-                        <i class="fas fa-user"></i>
+                        <img src="images/team/aleks_petrov.jpg" alt="Александр Петров" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="member-photo-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
                     </div>
                     <div class="member-info">
                         <h3>Александр Петров</h3>
@@ -86,9 +87,13 @@ include "blocks/header.php";
                         <p class="member-description">Основатель компании с 15-летним опытом в автомобильном бизнесе</p>
                     </div>
                 </div>
+                
                 <div class="team-member">
                     <div class="member-photo">
-                        <i class="fas fa-user"></i>
+                        <img src="images/team/devushka.jpg" alt="Мария Иванова" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="member-photo-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
                     </div>
                     <div class="member-info">
                         <h3>Мария Иванова</h3>
@@ -96,9 +101,13 @@ include "blocks/header.php";
                         <p class="member-description">Эксперт по подбору автомобилей с индивидуальным подходом к каждому клиенту</p>
                     </div>
                 </div>
+                
                 <div class="team-member">
                     <div class="member-photo">
-                        <i class="fas fa-user"></i>
+                        <img src="images/team/dima_sidorov.jpg" alt="Дмитрий Сидоров" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="member-photo-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
                     </div>
                     <div class="member-info">
                         <h3>Дмитрий Сидоров</h3>

@@ -14,18 +14,14 @@
             <div class="footer-section">
                 <h4>Автомобили</h4>
                 <ul>
-                    <li><a href="#">Новые автомобили</a></li>
-                    <li><a href="#">Акции и спецпредложения</a></li>
-                    <li><a href="#">Каталог моделей</a></li>
-                    <li><a href="#">Конфигуратор</a></li>
+                    <li><a href="models_stock.php">Авто в наличии</a></li>
+                    <li><a href="models.php">Каталог моделей</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Услуги</h4>
                 <ul>
                     <li><a href="#">Кредитование</a></li>
-                    <li><a href="#">Страхование</a></li>
-                    <li><a href="#">Trade-In</a></li>
                     <li><a href="#">Сервисное обслуживание</a></li>
                 </ul>
             </div>

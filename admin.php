@@ -88,6 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 <head>
     <meta charset="UTF-8">
     <title>Админка — Добавить авто</title>
+    <link rel="stylesheet" href="styles/style_admin.css">
 </head>
 <body>
     <h2>Добавить автомобиль в наличие</h2>
