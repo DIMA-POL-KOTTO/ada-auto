@@ -161,9 +161,9 @@ include "blocks/header.php";
             <div class="cta-content">
                 <h2>Найдите свой идеальный автомобиль</h2>
                 <p>Оставьте заявку и наш менеджер свяжется с вами для консультации</p>
-                <form class="cta-form">
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="tel" placeholder="Номер телефона" required>
+                <form class="cta-form" id="inquiryForm">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="tel" id="phone" name = "phone" placeholder="Номер телефона" required>
                     <button type="submit" class="btn-primary">Отправить заявку</button>
                 </form>
             </div>
@@ -175,5 +175,6 @@ include "blocks/footer.php";
     
 
     <script src="scripts/script.js"></script>
+    <script src="scripts/script_inquiry.js"></script>
 </body>
 </html>

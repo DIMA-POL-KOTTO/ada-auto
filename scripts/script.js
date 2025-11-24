@@ -117,14 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    const ctaForm = document.querySelector('.cta-form');
-    if (ctaForm) {
-        ctaForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
-            this.reset();
-        });
-    }
     
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
