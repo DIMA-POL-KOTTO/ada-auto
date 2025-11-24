@@ -109,9 +109,7 @@ include "blocks/header.php";
                         <div class="model-header">
                             <div class="model-title"><?= htmlspecialchars($car['model']) ?></div>
                         </div>
-                        <div class="model-actions">
-                            <button type="button" class="btn-primary btn-details">Подробнее</button>
-                        </div>
+                        
                     </div>
                 </a>
             </div>

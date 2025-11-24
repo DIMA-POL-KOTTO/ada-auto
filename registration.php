@@ -20,7 +20,7 @@
             <p>Создайте аккаунт для доступа ко всем услугам ADA Auto</p>
         </div>
         
-        <form method="POST" class="registration-form" action="/lib/registration.php" >  
+        <form method="POST" class="registration-form" action="lib/registration.php" >  
             <div class="form-row">
                 <div class="form-group">
                     <label for="firstName">Логин *</label>

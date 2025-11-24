@@ -31,7 +31,7 @@ $brands = $all_brands;
         <form method="GET" class="filters-container">
             <div class="filter-group">
                 <label for="search">Поиск по модели:</label>
-                <input type="text" id="search" class="filter-input" placeholder="Название..." value="<?=htmlspecialchars($_GET['search'] ?? '')?>">
+                <input type="text" id="search" name="search" class="filter-input" placeholder="Название..." value="<?=htmlspecialchars($_GET['search'] ?? '')?>">
             </div>
             <div class="filter-group">
                 <label for="brand">Марка:</label>
@@ -56,7 +56,7 @@ $brands = $all_brands;
                     foreach ($models_for_brand as $model):
                         $selected = (($_GET['model'] ?? '') === $model) ? 'selected' : '';
                     ?>
-                    <option value="<?htmlspecialchars($model) ?>" <?=$selected?>>
+                    <option value="<?=htmlspecialchars($model) ?>" <?=$selected?>>
                         <?=htmlspecialchars($model) ?>
                     </option>
                     <?php endforeach; endif; ?>

@@ -39,24 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 🔥 ОБРАБОТКА КЛИКОВ ПО КНОПКАМ "ПОДРОБНЕЕ" - ПЕРЕХОД НА ДЕТАЛИ МОДЕЛИ
-    document.querySelectorAll('.btn-details, .model-actions .btn-primary').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Находим родительскую карточку
-            const card = this.closest('.model-item');
-            if (card) {
-                const carId = card.dataset.carId;
-                
-                if (carId) {
-                    
-                    window.location.href = 'model_details.php?id=' + carId;
-                }
-            }
-        });
-    });
+    
 
     // 🔥 Прокрутка к бренду при выборе
     brandSelect.addEventListener('change', function() {
