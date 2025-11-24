@@ -104,13 +104,8 @@ include "blocks/header.php";
                                 <?= htmlspecialchars($car['brand']) ?><br><?= htmlspecialchars($car['model']) ?>
                             </div>
                         <?php endif; ?>
-                    </div>
-                    <div class="model-details">
-                        <div class="model-header">
-                            <div class="model-title"><?= htmlspecialchars($car['model']) ?></div>
-                        </div>
-                        
-                    </div>
+                    </div>         
+                    <div class="model-title"><?= htmlspecialchars($car['model']) ?></div>    
                 </a>
             </div>
         
