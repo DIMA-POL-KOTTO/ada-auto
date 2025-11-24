@@ -1,6 +1,7 @@
 <?php
 require_once "lib/popular_models.php";
 require_once "lib/_helpers.php";
+require_once "lib/hero_slides.php"
 ?>
 
 <!DOCTYPE html>
@@ -19,49 +20,24 @@ require_once "lib/_helpers.php";
 include "blocks/header.php";
 ?>
 <body>
-
     <section class="hero">
         <div class="hero-slider">
-            <!-- Слайд 1 -->
-            <div class="slide active" data-slide="0">
-               <div class="slide-bg" style="background-image: url('images/photos/vw.jpg')"></div>
+            <?php foreach ($hero_slides as $index => $slide) : ?>
+            <div class="slide <?= $index === 0?'active':'' ?>" data-slide="<?= $index ?>">
+                
+               <div class="slide-bg" style="background-image: url('images/photos/<?=htmlspecialchars($slide['background_image']) ?>')"></div>
                 <div class="slide-content">
-                    <h2>Volkswagen Tiguan 2024</h2>
-                    <p>Совершенство в каждом километре. Новый уровень комфорта и технологий</p>
+                    <h2><?= htmlspecialchars($slide['brand'].' '.$slide['model']) ?> 
+                    <p><?= htmlspecialchars($slide['description']) ?></p>
                     <div class="hero-actions">
-                        <a href="#" class="btn-primary">Подробнее</a>
+                        <a href="models_stock.php?brand=<?=  urlencode($slide['brand'])?>&model=<?= urlencode($slide['model']) ?>" class="btn-primary">Смотреть</a>
                         <a href="#" class="btn-outline-white">Конфигуратор</a>
                     </div>
                 </div>
             </div>
+            <?php endforeach;?>
             
-            <!-- Слайд 2 -->
-            <div class="slide" data-slide="1">
-                <div class="slide-bg" style="background-image: url('images/photos/bmw.jpg')"></div>
-                <div class="slide-overlay"></div>
-                <div class="slide-content">
-                    <h2>BMW 3 Series</h2>
-                    <p>Идеальное сочетание роскоши, производительности и инноваций</p>
-                    <div class="hero-actions">
-                        <a href="#" class="btn-primary">Подробнее</a>
-                        <a href="#" class="btn-outline-white">Конфигуратор</a>
-                    </div>
-                </div>
-            </div>
             
-            <!-- Слайд 3 -->
-            <div class="slide" data-slide="2">
-                <div class="slide-bg" style="background-image: url('images/photos/audi.jpg')"></div>
-                <div class="slide-content">
-                    <h2>Audi A4 Premium</h2>
-                    <p>Премиальный дизайн и передовые технологии для опытных водителей</p>
-                    <div class="hero-actions">
-                        <a href="#" class="btn-primary">Подробнее</a>
-                        <a href="#" class="btn-outline-white">Конфигуратор</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="hero-indicators">
             <span class="indicator active" data-slide="0"></span>
             <span class="indicator" data-slide="1"></span>
